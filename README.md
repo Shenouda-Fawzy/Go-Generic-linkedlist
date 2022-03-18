@@ -5,7 +5,7 @@ This repository implement some of the linked list functionality such as `PutItem
 ---
 
 ## Run
-Need go.18 or higher
+Need go1.18 or higher
 
 - Clone
 - `$ go run main.go`
