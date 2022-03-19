@@ -2,18 +2,18 @@ package main
 
 import "fmt"
 
-// List represents a singly-linked list item holds
+// Node represents a singly-linked list item holds
 // values of any type.
-type List[T any] struct {
-	next *List[T] // This is not a slice, this is a list of type T
+type Node[T any] struct {
+	next *Node[T] // This is not a slice, this is a Node of type T
 	val  T
 }
 
 // LinkedList ...
 type LinkedList[T any] struct {
 	length          int
-	listData        *List[T]
-	currentPosition *List[T]
+	listData        *Node[T]
+	currentPosition *Node[T]
 }
 
 // NewLinkedList ...
@@ -23,8 +23,8 @@ func NewLinkedList[T any]() *LinkedList[T] {
 
 // PutItem ...
 func (ll *LinkedList[T]) PutItem(item T) {
-	var location *List[T]
-	location = new(List[T])
+	var location *Node[T]
+	location = new(Node[T])
 	location.val = item
 	location.next = ll.listData
 	ll.listData = location
